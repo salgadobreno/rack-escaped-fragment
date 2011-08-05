@@ -15,7 +15,7 @@ module Rack
         
         uri = URI.parse(fragment)
         env["PATH_INFO"]    = uri.path
-        env["QUERY_STRING"] = uri.query
+        env["QUERY_STRING"] = uri.query || ""
         env["REQUEST_URI"]  = req.fullpath
         
         logger.info "Rack::EscapedFragment #{original_fullpath} => #{req.fullpath}"
