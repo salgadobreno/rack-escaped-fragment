@@ -27,7 +27,7 @@ module Rack
     private
     
     def logger
-      RAILS_DEFAULT_LOGGER || Logger.new(STDOUT)
+      ::Rails.logger || Logger.new(STDOUT) #TODO: make it Rails agnostic or something?
     end
     
   end
